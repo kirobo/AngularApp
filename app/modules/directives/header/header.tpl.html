@@ -1,0 +1,46 @@
+<div class="off-canvas position-left light-off-menu" data-off-canvas>
+    <div class="off-menu-close">
+        <h3>Menu</h3>
+        <span class="left-off-canvas-toggle"><i class="fa fa-times"></i></span>
+    </div>
+    <div class="callout">
+        <ul class="vertical menu off-menu drilldown menu" drilldown-menu data-responsive-menu="drilldown">
+            <li class="has-submenu">
+                <a href="#!/home"><i class="fa fa-home"></i>{{getWord('home')}}</a>
+            </li>
+            <li class="has-submenu" data-dropdown-menu="example1">
+                <a><i class="fa fa-film"></i>{{getWord('categories')}}</a>
+                <ul class="submenu menu vertical" data-submenu>
+                    <li><a href="#!/home"><i class="fa fa-film"></i>seleziona tutte</a></li>
+                    <li><a href="#!/home"><i class="fa fa-film"></i>scarica alta </a></li>
+                    <li><a href="#!/home"><i class="fa fa-film"></i>scarica bassa </a></li>
+                    <li><a href="#!/home"><i class="fa fa-film"></i>modifica tag</a></li>
+                </ul>
+            </li>
+            <li><a href="#!/home"><i class="fa fa-th"></i>{{getWord('my-account')}}</a></li>
+
+            <li><a href="#!/about"><i class="fa fa-user"></i>{{getWord('about')}}</a></li>
+            <li><a href="#!/contact"><i class="fa fa-envelope"></i>{{getWord('contact')}}</a></li>
+        </ul>
+    </div>
+
+    <div class="responsive-search">
+        <form method="post">
+            <div class="input-group">
+                <input class="input-group-field" type="text" placeholder="{{getWord('search-here')}}">
+                <div class="input-group-button">
+                    <button type="submit" name="search"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="off-social">
+        <h6>{{getWord('social-media')}}</h6>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-google-plus"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-vimeo"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+    </div>
+</div>

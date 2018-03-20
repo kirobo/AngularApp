@@ -1,0 +1,105 @@
+
+<div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <!--header-->
+        <div mobile-header></div>
+        <div class="off-canvas-content" data-off-canvas-content>
+            <header>
+                <!--Navber-->
+                <div web-header></div>
+            </header><!-- End Header -->
+            <div class="clearfix">
+            </div>
+            <!--breadcrumbs-->
+            <section id="breadcrumb" class="hidden-xs hidden-sm">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <nav aria-label="You are here:" role="navigation">
+                            <ul class="breadcrumbs">
+                                <li><i class="fa fa-home"></i><a href="#!/home">Home</a></li>
+                                <li>
+                                    <span class="show-for-sr">Current: </span> {{record.filename}}
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section><!--end breadcrumbs-->
+            <!-- full width Video -->
+            <section class="fullwidth-single-video">
+                <div class="row">
+                    <div class="large-12 columns text-center">
+                        <div class="flex-video widescreen">
+                            <img ng-src="{{record.prevpath}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="row">
+                <!-- left side content area -->
+                <div class="large-12 columns">
+                    <!-- single post stats -->
+                    <section class="SinglePostStats">
+                        <!-- newest video -->
+                        <div class="row secBg">
+                            <div class="large-12 columns">
+                                <div class="media-object stack-for-small">
+                                    <div class="media-object-section">
+
+                                    </div>
+                                    <div class="media-object-section object-second text-center">
+                                        <div class="author-des clearfix">
+                                            <div class="post-title">
+                                                <h3><span class="bold">{{getWord('title')}}:</span> {{record.filename}}</h3>
+                                            </div>
+                                        </div>
+                                        <div class="social-share">
+                                            <div class="singlePostDescription">
+                                                <div class="description">
+                                                    <div class="tags">
+                                                        <button><i class="fa fa-tags"></i>{{getWord('tags')}}</button>
+                                                        <a class="inner-btn" ng-repeat="tag in tags track by $index" ng-if="tag != ''">{{tag}}&nbsp;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section><!-- End single post stats -->
+                    <!-- single post description -->
+                    <section class="singlePostDescription">
+                        <div class="row secBg">
+                            <div class="large-12 columns">
+                                <div class="heading text-center">
+                                    <h3>{{getWord('actions')}}</h3>
+                                </div>
+                                <div class="description action-buttons text-center">
+                                    <div class="text-center" ng-click="downloadTIFFImage()">
+                                        <span class="fa fa-4x fa-cloud-download color-blue action-pointer"></span>
+                                        <br/>
+                                        {{getWord('download-tiff')}}
+                                    </div>
+                                    <div class="text-center" ng-click="downloadPreviewImage()">
+                                        <span class="fa fa-4x fa-cloud-download color-grey-icon action-pointer"></span>
+                                        <br/>
+                                        {{getWord('download-jpeg')}}
+                                    </div>
+                                    <div class="text-center">
+                                        <span class="fa fa-4x fa-plus-circle color-yellow action-pointer"></span>
+                                        <br/>
+                                        {{getWord('add-tag')}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section><!-- End single post description -->
+                </div><!-- end left side content area -->
+            </div>
+            <!-- main content -->
+
+            <div app-footer></div>
+        </div><!--end off canvas content-->
+    </div><!--end off canvas wrapper inner-->
+</div><!--end off canvas wrapper-->

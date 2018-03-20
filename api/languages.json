@@ -1,0 +1,14 @@
+[
+    {
+        "key": "us",
+        "alt": "United States",
+        "title": "English (US)",
+        "img": "english.png"
+    },
+    {
+        "key": "it",
+        "alt": "Italy",
+        "title": "Italiano",
+        "img": "italian.png"
+    }
+]

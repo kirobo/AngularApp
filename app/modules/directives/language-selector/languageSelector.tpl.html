@@ -1,0 +1,15 @@
+<div class="top-button" ng-controller="LanguagesCtrl">
+    <ul class="menu float-right">
+        <li ng-repeat="language in languages">
+            <img class="language" ng-click="selectLanguage(language)" ng-src="{{ imageURL + language.img }}" alt="{{language.name}}">
+        </li>
+        <li>
+            <a class="left-off-canvas-toggle transparent-btn" >
+                <span class="menu-icon"></span>
+            </a>
+        </li>
+        <li>
+            <a class="transparent-btn" href="#!/logout">{{getWord('logout')}}</a>
+        </li>
+    </ul>
+</div>

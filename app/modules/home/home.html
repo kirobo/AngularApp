@@ -1,0 +1,116 @@
+<div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+        <!--header-->
+        <div mobile-header></div>
+        <div class="off-canvas-content" data-off-canvas-content>
+            <header>
+                <div web-header></div>
+                <div class="clearfix" ng-show="isMobileDevice"></div>
+                <div class="spacer" ng-show="isMobileDevice"></div>
+                <div class="top-bar-left topsearch" ng-show="isMobileDevice">
+                    <div class="search-bar-full mobile-search-bar">
+                        <form method="get" ng-submit="searchAllImages()">
+                            <div class="input-group">
+                                <div class="input-group-button icon-btn">
+                                    <i class="top-0 fa fa-2x fa-info-circle"></i>
+                                </div>
+                                <div class="search-input-box">
+                                    <input ng-model="searchTerms" ng-keydown="($event.charCode==13) ? searchAllImages() : return" type="search" class="input-group-field" placeholder="{{getWord('search-description')}}">
+                                </div>
+                                <div class="input-group-button icon-btn" ng-click="searchAllImages();">
+                                    <i class="top-0 fa fa-2x fa-search auto-right"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix" ng-show="isMobileDevice"></div>
+                <div class="spacer" ng-show="isMobileDevice"></div>
+                <section id="randomMedia" ng-show="showDownloads">
+                    <div class="random-media-head text-center">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <ul class="tabs subheader-color" data-tabs id="media">
+                                    <li class="tabs-title"><span class="fa fa fa-long-arrow-left tabs-arrow-left"></span> </li>
+                                    <li class="tabs-title is-active"><a>seleziona tutte</a></li>
+                                    <li class="tabs-title" ng-click="downloadTIFF()"><a>scarica alta risoluzione</a></li>
+                                    <li class="tabs-title" ng-click="downloadPrevs()"><a>scarica bassa risoluzione</a></li>
+                                    <li class="tabs-title"><a>modifica tag</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </header><!-- End Header -->
+            <div class="clearfix">
+            </div>
+            <div class="spacer">
+
+            </div>
+            <!-- main content -->
+            <section class="content" ng-show="!showResults">
+                <div class="main-heading">
+                    <div class="row secBg padding-14">
+                        <div class="medium-12 small-12 columns">
+                            <div class="head-title text-center">
+                                <h4>Search for images.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content" ng-show="showResults">
+                <!-- newest video -->
+                <div class="main-heading">
+                    <div class="row secBg padding-14">
+                        <div class="medium-12 small-12 columns">
+                            <div class="head-title text-center">
+                                <h4>ricerca terminate | {{records.length}} risultati</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row secBg" bs-loading-overlay bs-loading-overlay-template-options="{radius:25, width:6, length: 9, color: 'green'}">
+                    <div class="large-12 columns">
+                        <div class="row column head-text clearfix">
+                            <p class="pull-left">{{getWord('total-results')}} : <span>{{records.length}}</span></p>
+                        </div>
+                        <div class="tabs-content" data-tabs-content="newVideos">
+                            <div class="tabs-panel is-active" id="new-all">
+                                <div class="row list-group">
+                                    <div class="item large-3 medium-6 columns group-item-grid-default" ng-repeat="record in records track by $index">
+                                        <div class="post thumb-border">
+                                            <div class="post-thumb">
+                                                <img ng-src="{{record.imgURL}}" alt="{{record.filename}}">
+                                                <a href="#!/detail/{{record.id}}" class="hover-posts">
+                                                    <span><i class="fa fa-play"></i>View Details</span>
+                                                </a>
+                                            </div>
+                                            <div class="post-des text-center">
+                                                <div class="post-stats clearfix">
+                                                    <p class="pull-left">
+
+                                                        <div>
+                                                            <a ng-class="{'image-checked' : record.isChecked, '' : !record.isChecked}" class="secondary-button"><i ng-class="{'fa-check' : record.isChecked, 'fa-square' : !record.isChecked}" class="fa " data-id="{{record.id}}" data-name="{{record.dbpathname}}" data-value="{{record.path}}" data-isSelected="true" ng-click="ontogglecheckbox($event, record);"></i></a>
+                                                            <label class="image-label">&nbsp;<span>&nbsp; {{record.filename}}</span></label>
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center row-btn">
+                            <a class="button radius" ng-show="hasResults" ng-click="viewMoreImages()">{{getWord('view-more')}}</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div app-footer></div>
+        </div><!--end off canvas content-->
+    </div><!--end off canvas wrapper inner-->
+</div><!--end off canvas wrapper-->

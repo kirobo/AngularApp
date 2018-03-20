@@ -1,0 +1,52 @@
+<!--Navber-->
+<section id="navBar" ng-cloak>
+    <nav class="sticky-container" data-sticky-container>
+        <div class="topnav" data-sticky data-top-anchor="navBar" data-btm-anchor="footer-bottom:bottom" data-margin-top="0" data-margin-bottom="0" style="width: 100%; background: #fff;" data-sticky-on="large">
+            <div class="title-bar" data-responsive-toggle="beNav" data-hide-for="large" ng-show="isMobileDevice">
+                <div class="visible-xs">
+                    <button class="left-off-canvas-toggle menu-icon" type="button"></button>
+                </div>
+                <div class="title-bar-title"><img src="{{imageURL + 'logo-front-white.png'}}" alt="logo"></div>
+            </div>
+            <div class="show-for-large topbar-full clearfix" id="beNav" style="width: 100%;">
+                <div class="top-bar-left toplogo">
+                    <ul class="menu">
+                        <li class="menu-text">
+                            <a href="#!/home"><img ng-src="{{imageURL + 'logo-front-white.png'}}" alt="logo"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-bar-left topnews">
+                    <div class="newsTicker">
+                        <i class="fa fa-image"></i>
+                        <span class="text-white">{{getWord('new-submissions')}}</span>
+                        <ul id="newsBar">
+                            <li><a class="text-white" href="#">Submission 1</a></li>
+                            <li><a class="text-white" href="#">Submission 2</a></li>
+                            <li><a class="text-white" href="#">Submission 3</a></li>
+                            <li><a class="text-white" href="#">Submission 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="top-bar-left topsearch">
+                    <div class="search-bar-full">
+                        <form method="get">
+                            <div class="input-group">
+                                <div class="input-group-button icon-btn">
+                                    <i class="text-white top-0 fa fa-2x fa-info-circle" class="has-tip" tooltip-placement="bottom" tooltip="{{getWord('tooltip')}}"></i>
+                                </div>
+                                <input class="input-group-field" ng-model="searchTerms" ng-model="searchTerms" ng-keydown="($event.keyCode===13) ? searchAllImages() : return"  type="search" placeholder="{{getWord('search-description')}}">
+                                <div class="input-group-button icon-btn" ng-click="searchAllImages();">
+                                    <i class="text-white top-0 fa fa-2x fa-search auto-right"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="top-bar-left topbtn">
+                    <div language-selector></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>

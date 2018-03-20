@@ -1,0 +1,68 @@
+<div id="content">
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            <!--header-->
+            <div mobile-header></div>
+            <div class="off-canvas-content" data-off-canvas-content>
+                <div web-header></div>
+                <div class="clearfix">
+                </div>
+                <!--breadcrumbs-->
+                <section id="breadcrumb" class="hidden-xs hidden-sm">
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <nav aria-label="You are here:" role="navigation">
+                                <ul class="breadcrumbs">
+                                    <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                                    <li>
+                                        <span class="show-for-sr">Current: </span> Contact us
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </section><!--end breadcrumbs-->
+                <div class="spacer">
+
+                </div>
+                <section class="registration">
+                    <div class="row secBg">
+                        <div class="large-12 columns">
+                            <div class="login-register-content">
+                                <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
+                                    <div class="large-12 columns">
+                                        <h4>{{getWord('contact-title')}}</h4>
+                                        <div class="register-form">
+                                            <form method="post" data-abide novalidate>
+                                                <div data-abide-error class="alert callout" style="display: none;">
+                                                    <p><i class="fa fa-exclamation-triangle"></i> {{getWord('form-error')}}</p>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-label"><i class="fa fa-user"></i></span>
+                                                    <input class="input-group-field" type="text" placeholder="{{getWord('form-name')}}" required>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-label"><i class="fa fa-envelope"></i></span>
+                                                    <input class="input-group-field" type="email" placeholder="{{getWord('form-email')}}" required>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-label"><i class="fa fa-book"></i></span>
+                                                    <input class="input-group-field" type="text" placeholder="{{getWord('form-subject')}}" required>
+                                                </div>
+                                                <textarea required placeholder="{{getWord('form-subject')}}"></textarea>
+                                                <button class="button expanded" type="submit" name="submit">{{getWord('form-send')}}</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- main content -->
+                <div app-footer></div>
+            </div><!--end off canvas content-->
+        </div><!--end off canvas wrapper inner-->
+    </div><!--end off canvas wrapper-->
+</div>
+
